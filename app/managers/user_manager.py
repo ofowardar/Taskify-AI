@@ -34,13 +34,22 @@ class UserManager:
 
         return {'message':'User registered succesfully! ' + f" Welcome to the Taskify {username}"}
     
-    def login_user(self,username:str,password:str) -> dict:
+    def login_user(self, username: str, password: str) -> list:
         """
-        Login
+        Login user and return [is_logined, username]
         """
-        hashed = self.hash_password(password=password)
+        hashed_password = self.hash_password(password)
+    
         for user in self.users:
-            if user['username'] == username and user['password_hash']==hash:
-                return {"message":f"Login Succesfully! Welcome: {username}"}
-        return False
+            if user["username"] == username:
+                if user["password_hash"] == hashed_password:
+                    # Login başarılı
+                    return [True, username]
+                else:
+                    # Şifre yanlış
+                    return [False, None]
+        
+        # Kullanıcı bulunamadı
+        return [False, None]
+
 

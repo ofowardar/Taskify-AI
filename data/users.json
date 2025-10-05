@@ -8,5 +8,15 @@
         "id": "c6ca1df0-6af1-484d-b8ed-c956c48ac639",
         "username": "deneme2",
         "password_hash": "0efe53366e7e886c9203698b425ee8bf"
+    },
+    {
+        "id": "e28191a6-112a-4f58-aa35-2ee86a533856",
+        "username": "deneme_son",
+        "password_hash": "03a1900c0d8aa0006bd852e73f34666a"
+    },
+    {
+        "id": "28e54885-c82e-4a0f-8f27-ce334a2a3a92",
+        "username": "ofowardar",
+        "password_hash": "03a1900c0d8aa0006bd852e73f34666a"
     }
 ]

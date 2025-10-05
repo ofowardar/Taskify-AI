@@ -21,8 +21,14 @@ class TaskManager:
             print("Something went wrong about JSON file... err:" + str(err))
             return []
 
-    def save_tasks(self,tasks):
-        write_json(self.file_path,tasks)
+    def save_tasks(self, tasks):
+    # JSON sadece dict, str, int falan kabul ediyor
+        tasks_dict = [
+            {k: (v.isoformat() if isinstance(v, datetime) else v) for k, v in t.items()}
+            if isinstance(t, dict) else t.__dict__
+            for t in tasks
+        ]
+        write_json(self.file_path, tasks_dict)
 
     def add_task(self,owner,content,tags=None):
         tasks = self.load_tasks()
@@ -32,12 +38,12 @@ class TaskManager:
             content=content,
             tags = tags if tags else [],
             complated= False,
-            created_time = datetime.now()
+            created_time = datetime.now().isoformat()
         )
         
-        tasks.append(task)
+        tasks.append(task.__dict__)
         self.save_tasks(tasks)
-        return tasks
+        return task.__dict__
     
 
     def get_task_by_user(self,owner:str):

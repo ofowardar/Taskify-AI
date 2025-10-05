@@ -10,13 +10,20 @@ import uuid
 user_manager = UserManager()
 task_manager = TaskManager()
 
-# Users test
-#user_manager.register_user("deneme2","deneme2")
+user_manager.register_user("ofowardar","ofoofo")
 
-#Login test
-if user_manager.login_user("denem","ofo123"):
-    print("Login Succesfully!")
-else:
-    print("Something Went Wrong!")
+is_logined,current_username = user_manager.login_user("ofowardar","ofoofo")
+#is_logined,current_username = user_manager.login_user("deneme_son","sadsa") Wrong Passwd test
+print(is_logined)
 
-task_manager.add_task("Testtest","astronout")
+if current_username:
+    task = task_manager.add_task(current_username,"asdsadsa")
+
+print(current_username)
+
+own_tasks = task_manager.get_task_by_user(current_username)
+
+print(own_tasks)
+
+complated_task = task_manager.complate_task(task['task_id'])
+print(complated_task)
