@@ -14,5 +14,5 @@ class Task(BaseModel):
     content:str
     tags:List[str] = []
     complated:bool = False
-    created_time: datetime = datetime.now()
+    created_time: datetime = datetime.now().isoformat()
 
