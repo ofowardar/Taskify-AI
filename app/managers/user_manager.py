@@ -1,6 +1,7 @@
 import hashlib
 import uuid
-from utils.json_helper import read_json,write_json
+from ..utils.json_helper import read_json, write_json
+
 
 USERS_FILE = "C:/Users/Ömer Faruk Özvardar/Desktop/Taskify/data/users.json"
 

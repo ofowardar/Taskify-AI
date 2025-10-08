@@ -28,5 +28,10 @@
         "id": "6efa4d94-af49-4973-8d67-88068675a1ef",
         "username": "test1",
         "password_hash": "5a105e8b9d40e1329780d62ea2265d8a"
+    },
+    {
+        "id": "6700f40c-dba6-48cb-b1f4-3323b2fabd6a",
+        "username": "ofowardarFastAPI",
+        "password_hash": "f275f2a55ee4abdf8875dce6987e2f5f"
     }
 ]

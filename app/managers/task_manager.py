@@ -1,10 +1,10 @@
 from pathlib import Path
 from datetime import datetime
 import uuid
-from models import Task
-from utils.json_helper import read_json,write_json
+from ..models import Task
+from ..utils.json_helper import read_json,write_json
 import json
-from tagger import Tagger
+from ..tagger import Tagger
 
 FILE_PATH = "C:/Users/Ömer Faruk Özvardar/Desktop/Taskify/data/tasks.json"
 
