@@ -1,8 +1,15 @@
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.cluster import KMeans
 import numpy as np
+import nltk
+
+nltk.download("punkt_tab")
+nltk.download("wordnet")
+nltk.download("omw-1.4")
+
 
 class Tagger:
+    lemmatizer = nltk.WordNetLemmatizer()
     def __init__(self):
         self.vectorizer = TfidfVectorizer()
         self.fitted_docs = []
@@ -33,7 +40,11 @@ class Tagger:
         terms = self.vectorizer.get_feature_names_out()
         tfidfScore =vector.toarray()[0]
         top_indices = tfidfScore.argsort()[-top_n:][::-1]
-        return [terms[i] for i in top_indices]
+        lemmatized_terms = [
+            self.lemmatizer.lemmatize(term) for term in terms
+        ]
+        return [lemmatized_terms[i] for i in top_indices]
+
     
 
 
