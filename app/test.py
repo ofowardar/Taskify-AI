@@ -8,13 +8,22 @@ import uuid
 task_manager = TaskManager()
 user_manager = UserManager()
 
-user_manager.register_user("Mr.Whitee","mrbabawhite")
+user_manager.register_user("test1","test1")
 
-is_logined,username = user_manager.login_user("Mr.Whitee","mrbabawhite")
+isLogined,username = user_manager.login_user("test1","test1")
 
-if is_logined:
-    print("Login Succesfully!!")
+context = """
+I need go to shop and buy some vegetables for my healty eating because i will prepare dinner for tonight.
+"""
 
-    task = task_manager.add_task(username,"Unity Kursu İzle")
-    task_manager.complate_task(task['task_id'])
+if isLogined:
+    task = task_manager.add_task(username,context)
+    print(task)
+
+#owner_tasks = task_manager.get_task_by_user(username)
+#print(owner_tasks)
+
+task_manager.complate_task(task['task_id'])
+
+
 
