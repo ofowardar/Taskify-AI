@@ -208,5 +208,17 @@
         ],
         "complated": false,
         "created_time": "2025-10-08T20:23:59.223551"
+    },
+    {
+        "task_id": "21a921ce-e088-430a-a25e-cd17f019ea86",
+        "owner": "TaggerTest",
+        "content": "Today i need to complate my Software FastAPI project for my github profile.",
+        "tags": [
+            "today",
+            "software",
+            "project"
+        ],
+        "complated": false,
+        "created_time": "2025-10-08T20:29:13.361056"
     }
 ]
